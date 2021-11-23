@@ -1,16 +1,13 @@
 import styled from "styled-components";
 
-// export const Button = styled.button`
-//   padding: 2em 4em;
-//   background-color: red;
-// `;
-
-export const Button = styled.button`
-  background-color: ${(props) => props.bgColor};
-  padding: 4em;
-  border: none;
-
-  &:hover {
-    background-color: orange;
-  }
+// Styled component named StyledButton
+const StyledButton = styled.button`
+  background-color: black;
+  font-size: 32px;
+  color: white;
 `;
+
+export function Button() {
+  // Use it like any other component.
+  return <StyledButton> Login </StyledButton>;
+}
