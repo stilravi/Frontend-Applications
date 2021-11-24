@@ -1,17 +1,30 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { FiHome, FiInfo, FiAtSign } from "react-icons/fi";
 
 const NavStyled = styled.nav`
-  background-color: lightblue;
+  background-color: #1a1c1f;
+  height: 100vh;
+  padding: 4em 2em;
 
   ul {
-    display: flex;
+    padding: 0;
   }
 
   li {
-    background-color: darkcyan;
     list-style-type: none;
-    margin-right: 1em;
+    margin-bottom: 2em;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+
+  svg {
+    margin-right: 10px;
   }
 `;
 
@@ -20,13 +33,22 @@ const Nav = () => {
     <NavStyled>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/">
+            <FiHome />
+            Home
+          </Link>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <Link to="/about">
+            <FiInfo />
+            About
+          </Link>
         </li>
         <li>
-          <Link to="/contact">Contact</Link>
+          <Link to="/contact">
+            <FiAtSign />
+            Contact
+          </Link>
         </li>
       </ul>
     </NavStyled>
