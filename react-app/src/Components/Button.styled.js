@@ -4,6 +4,10 @@ const StyledButton = styled.button`
   padding: 2em;
   background-color: lightblue;
   border: none;
+
+  &:hover {
+    background-color: blue;
+  }
 `;
 
 const Button = ({ children }) => {
