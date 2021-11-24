@@ -1,10 +1,11 @@
 import "./App.css";
-import Button from "./Components/Button.styled";
+import Button from "./Components/Button";
 
 function App() {
   return (
     <div className="App">
-      <Button>Tekst</Button>
+      <Button primary>Klik hier</Button>
+      <Button>Klik hier</Button>
     </div>
   );
 }
