@@ -1,12 +1,11 @@
 import "./App.css";
-import { Button } from "./Components/Button";
-import { AppContainer } from "./Components/AppContainer";
+import Button from "./Components/Button.styled";
 
 function App() {
   return (
-    <AppContainer>
-      <Button />
-    </AppContainer>
+    <div className="App">
+      <Button>Tekst</Button>
+    </div>
   );
 }
 
