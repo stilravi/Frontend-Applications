@@ -1,8 +1,14 @@
+import styled from "styled-components";
+
+const StyledHome = styled.main`
+  background-color: red;
+`;
+
 const Home = () => {
   return (
-    <div>
-      <h1>Home page</h1>
-    </div>
+    <StyledHome>
+      <h1>Homepage</h1>
+    </StyledHome>
   );
 };
 

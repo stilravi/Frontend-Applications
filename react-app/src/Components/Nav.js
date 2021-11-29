@@ -30,28 +30,30 @@ const NavStyled = styled.nav`
 
 const Nav = () => {
   return (
-    <NavStyled>
-      <ul>
-        <li>
-          <Link to="/">
-            <FiHome />
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link to="/about">
-            <FiInfo />
-            About
-          </Link>
-        </li>
-        <li>
-          <Link to="/contact">
-            <FiAtSign />
-            Contact
-          </Link>
-        </li>
-      </ul>
-    </NavStyled>
+    <header>
+      <NavStyled>
+        <ul>
+          <li>
+            <Link to="/">
+              <FiHome />
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/about">
+              <FiInfo />
+              About
+            </Link>
+          </li>
+          <li>
+            <Link to="/contact">
+              <FiAtSign />
+              Contact
+            </Link>
+          </li>
+        </ul>
+      </NavStyled>
+    </header>
   );
 };
 
