@@ -5,9 +5,7 @@ import { useData } from "./useData";
 const Chart = () => {
   const d3Chart = useRef();
   const apiData = useData();
-
   const [shownData, setShownData] = useState();
-
   const [d3Tools, setD3Tools] = useState({});
 
   useEffect(() => {
@@ -35,6 +33,11 @@ const Chart = () => {
     const yaxis = d3.axisLeft().scale(yscale).tickSizeOuter([0]);
     const g_yaxis = g.append("g").attr("class", "y axis");
 
+    // Color Scale
+    const colorScale = d3
+      .scaleSequential(d3.interpolateRgb("#a8c0ff", "#3A4FCF"))
+      .domain([0, 25]);
+
     setD3Tools({
       xscale,
       yscale,
@@ -42,6 +45,7 @@ const Chart = () => {
       g_yaxis,
       xaxis,
       yaxis,
+      colorScale,
       svg,
     });
   }, []);
@@ -55,10 +59,12 @@ const Chart = () => {
       return;
     }
 
-    const { xscale, yscale, g_xaxis, g_yaxis, xaxis, yaxis, svg } = d3Tools;
+    const { xscale, yscale, g_xaxis, g_yaxis, xaxis, yaxis, colorScale, svg } =
+      d3Tools;
 
     xscale.domain([0, d3.max(shownData, (d) => d.abv)]);
     yscale.domain(shownData.map((d) => d.name));
+    colorScale.domain([0, d3.max(shownData, (d) => d.abv)]);
 
     g_xaxis.transition().call(xaxis);
     g_yaxis.transition().call(yaxis);
@@ -71,7 +77,8 @@ const Chart = () => {
       .transition()
       .attr("height", yscale.bandwidth())
       .attr("width", (d) => xscale(d.abv))
-      .attr("y", (d) => yscale(d.name));
+      .attr("y", (d) => yscale(d.name))
+      .attr("fill", (d, i) => colorScale(d.abv));
   }, [shownData]);
 
   function handleInputChange(event) {
