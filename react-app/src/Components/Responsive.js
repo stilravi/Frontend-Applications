@@ -8,7 +8,12 @@ const data = [
   { category: "D", quantity: 120 },
   { category: "E", quantity: 120 },
   { category: "F", quantity: 120 },
-  { category: "G", quantity: 1220 },
+  { category: "F1", quantity: 120 },
+  { category: "F3", quantity: 120 },
+  { category: "F4", quantity: 120 },
+  { category: "F5", quantity: 120 },
+  { category: "F6", quantity: 120 },
+  { category: "G", quantity: 120 },
 ];
 
 const Chart = () => {
