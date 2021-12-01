@@ -5,6 +5,7 @@ import { useData } from "./useData";
 const Chart = () => {
   const d3Chart = useRef();
   const apiData = useData();
+
   const [shownData, setShownData] = useState();
 
   const [d3Tools, setD3Tools] = useState({});
