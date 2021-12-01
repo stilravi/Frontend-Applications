@@ -10,7 +10,8 @@ const StyledCheckbox = styled.label`
   font-family: "Outfit", sans-serif;
   font-size: 15px;
   color: #4e4e4e;
-  margin-top: 10px;
+  margin-top: 0px;
+  cursor: pointer;
 `;
 
 const StyledBarChart = styled.div`
@@ -30,7 +31,7 @@ const Chart = () => {
   useEffect(() => {
     const margin = { top: 80, bottom: 10, left: 200, right: 20 };
     const width = 850 - margin.left - margin.right;
-    const height = 650 - margin.top - margin.bottom;
+    const height = 600 - margin.top - margin.bottom;
 
     const svg = d3
       .select(d3Chart.current)
@@ -54,7 +55,7 @@ const Chart = () => {
 
     // Color Scale
     const colorScale = d3
-      .scaleSequential(d3.interpolateRgb("#a8c0ff", "#3A4FCF"))
+      .scaleSequential(d3.interpolateRgb("#C6D6FF", "#3A4FCF"))
       .domain([0, 25]);
 
     setD3Tools({

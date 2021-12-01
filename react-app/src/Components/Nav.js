@@ -36,7 +36,7 @@ const Nav = () => {
           <li>
             <Link to="/">
               <FiHome />
-              Home
+              Data visualisation
             </Link>
           </li>
           <li>

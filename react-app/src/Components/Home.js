@@ -9,22 +9,12 @@ const StyledHome = styled.main`
   justify-content: center;
   align-items: center;
   height: 100vh;
-
-  h1 {
-    font-family: "Outfit", sans-serif;
-    font-weight: 500;
-    font-size: 1.5em;
-    color: #1b1b1b;
-    position: absolute;
-    top: 20px;
-    left: 30px;
-  }
 `;
 
 const Home = () => {
   return (
     <StyledHome>
-      <h1>Homepage</h1>
+      <Title>Alchohol percentage of 25 beers</Title>
       <Chart />
     </StyledHome>
   );
