@@ -1,23 +1,13 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import * as d3 from "d3";
-
-const data = [
-  { category: "A", quantity: 40 },
-  { category: "B", quantity: 80 },
-  { category: "C", quantity: 60 },
-  { category: "D", quantity: 120 },
-  { category: "E", quantity: 120 },
-  { category: "F", quantity: 120 },
-  { category: "F1", quantity: 120 },
-  { category: "F3", quantity: 120 },
-  { category: "F4", quantity: 120 },
-  { category: "F5", quantity: 120 },
-  { category: "F6", quantity: 120 },
-  { category: "G", quantity: 120 },
-];
+import { useData } from "./useData";
 
 const Chart = () => {
   const d3Chart = useRef();
+  const apiData = useData();
+  const [shownData, setShownData] = useState();
+
+  const [d3Tools, setD3Tools] = useState({});
 
   useEffect(() => {
     const margin = { top: 40, bottom: 10, left: 300, right: 20 };
@@ -44,27 +34,66 @@ const Chart = () => {
     const yaxis = d3.axisLeft().scale(yscale).tickSizeOuter([0]);
     const g_yaxis = g.append("g").attr("class", "y axis");
 
-    xscale.domain([0, d3.max(data, (d) => d?.quantity)]);
-    yscale.domain(data.map((d) => d?.category));
+    setD3Tools({
+      xscale,
+      yscale,
+      g_xaxis,
+      g_yaxis,
+      xaxis,
+      yaxis,
+      svg,
+    });
+  }, []);
 
-    //Render the axis
+  useEffect(() => {
+    setShownData(apiData);
+  }, [apiData]);
+
+  useEffect(() => {
+    if (!shownData) {
+      return;
+    }
+
+    const { xscale, yscale, g_xaxis, g_yaxis, xaxis, yaxis, svg } = d3Tools;
+
+    xscale.domain([0, d3.max(shownData, (d) => d.abv)]);
+    yscale.domain(shownData.map((d) => d.name));
+
     g_xaxis.transition().call(xaxis);
     g_yaxis.transition().call(yaxis);
 
     svg
-      .append("g")
-      .attr("transform", `translate(${margin.left},${margin.top})`)
+      .select("g")
       .selectAll("rect")
-      .data(data, (d) => d.category)
+      .data(shownData, (d) => d.name)
       .join("rect")
       .transition()
       .attr("height", yscale.bandwidth())
-      .attr("width", (d) => xscale(d?.quantity))
-      .attr("y", (d) => yscale(d?.category));
-  });
+      .attr("width", (d) => xscale(d.abv))
+      .attr("y", (d) => yscale(d.name));
+  }, [shownData]);
+
+  function handleInputChange(event) {
+    console.log(event.currentTarget.checked);
+    if (event.currentTarget.checked) {
+      setShownData(apiData.filter((d) => d.abv < 8));
+    } else {
+      setShownData(apiData);
+    }
+  }
 
   return (
     <div>
+      <label>
+        <input
+          type="checkbox"
+          name="beers"
+          value="1"
+          id="filter-beers-only"
+          onChange={handleInputChange}
+        />
+        Only show beers under 8% alcohol
+      </label>
       <svg ref={d3Chart}></svg>
     </div>
   );
