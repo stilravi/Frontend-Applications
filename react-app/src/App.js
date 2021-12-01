@@ -4,9 +4,11 @@ import About from "./Components/About";
 import Contact from "./Components/Contact";
 import Nav from "./Components/Nav";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import { ApiProvider } from "./Provider/ContextProvider";
 
 function App() {
   return (
+    // <ApiProvider>
     <Router>
       <div className="App">
         <Nav />
@@ -18,6 +20,7 @@ function App() {
         </Routes>
       </div>
     </Router>
+    // </ApiProvider>
   );
 }
 
