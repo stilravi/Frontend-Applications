@@ -1,6 +1,25 @@
 import React, { useEffect, useState, useRef } from "react";
 import * as d3 from "d3";
 import { useData } from "./useData";
+import styled from "styled-components";
+
+const StyledCheckbox = styled.label`
+  position: absolute;
+  top: 65px;
+  left: 30px;
+  font-family: "Outfit", sans-serif;
+  font-size: 15px;
+  color: #4e4e4e;
+  margin-top: 10px;
+`;
+
+const StyledBarChart = styled.div`
+  text {
+    font-family: "Outfit", sans-serif;
+    font-size: 11px;
+    color: #4e4e4e;
+  }
+`;
 
 const Chart = () => {
   const d3Chart = useRef();
@@ -9,9 +28,9 @@ const Chart = () => {
   const [d3Tools, setD3Tools] = useState({});
 
   useEffect(() => {
-    const margin = { top: 40, bottom: 10, left: 300, right: 20 };
+    const margin = { top: 80, bottom: 10, left: 200, right: 20 };
     const width = 850 - margin.left - margin.right;
-    const height = 600 - margin.top - margin.bottom;
+    const height = 650 - margin.top - margin.bottom;
 
     const svg = d3
       .select(d3Chart.current)
@@ -79,7 +98,7 @@ const Chart = () => {
       .attr("width", (d) => xscale(d.abv))
       .attr("y", (d) => yscale(d.name))
       .attr("fill", (d, i) => colorScale(d.abv));
-  }, [shownData]);
+  });
 
   function handleInputChange(event) {
     console.log(event.currentTarget.checked);
@@ -91,8 +110,8 @@ const Chart = () => {
   }
 
   return (
-    <div>
-      <label>
+    <StyledBarChart>
+      <StyledCheckbox>
         <input
           type="checkbox"
           name="beers"
@@ -101,9 +120,9 @@ const Chart = () => {
           onChange={handleInputChange}
         />
         Only show beers under 8% alcohol
-      </label>
+      </StyledCheckbox>
       <svg ref={d3Chart}></svg>
-    </div>
+    </StyledBarChart>
   );
 };
 
