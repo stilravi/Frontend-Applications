@@ -15,7 +15,7 @@ Ravi Stil | 02-12-2021 | Frontend Data | Information Design: Tech Track
 
 - [Opdracht](#Opdracht)
 - [Data](#Data)
-  - [React](#React)
+  - [React](#Data#React)
   - [D3 Library](#D3-Library])
   - [Punk API](#Punk-API])
 - [Instalatie](#Instalatie)
