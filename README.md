@@ -34,18 +34,18 @@ De volgende omschrijving van de opdracht hebben wij gekregen op de eerste dag: "
 
 ### React
 
-Om de Datavisualisatie te maken moet er gebruik gemaakt worden van de D3 Library. Dit is een JavaScript Library die erg handig is voor het maken van veel verschillende soorten Datavisualisaties. De documentatie van deze Library is te vinden op [deze pagina](https://d3js.org/).
+Omdat de Datavisualisatie in een Framework gemaakt moest worden heb ik gekozen voor React aangezien dit een van de populairste Frameworks is en dit ook gebruikt gaat worden tijdens de lessen. React is een JavaScript Framework (noemen zichzelf een library) wat ervoor zorgt dat je onder andere elementen dynamisch kan renderen op de webpagina waardoor bijvoorbeeld refreshen niet meer nodig is. Natuurlijk zijn er veel meer voordelen bij het gebruiken van React en daarom verwijs ik je graag door naar de documentatie van React op [deze pagina](https://reactjs.org/).
 
 ### D3 Library
 
-Om de Datavisualisatie te maken moet er gebruik gemaakt worden van de D3 Library. Dit is een JavaScript Library die erg handig is voor het maken van veel verschillende soorten Datavisualisaties. De documentatie van deze Library is te vinden op [deze pagina](https://d3js.org/).
+Om de Datavisualisatie te maken die uiteindelijk dynamisch gerenderd moet worden kan er gebruik gemaakt worden van de D3 Library. Dit is een JavaScript Library die erg handig is voor het maken van veel verschillende soorten Datavisualisaties. De documentatie van deze Library is te vinden op [deze pagina](https://d3js.org/).
 
 ### Punk API
 
 De Data die in de Datavisualisatie moest komen moet vanuit een API komen. Deze API mocht ik zelf uitkiezen en ik heb gekozen voor de [Punk API](https://punkapi.com/documentation/v2). Met Deze API kun je veel informatie over een groot aantal biertjes vinden en inladen in je website. Deze Dataset is al redelijk schoon dus hoeft er niet veel opgeschoond te worden.
 
 De Live Demo is te vinden op de volgende link: <br/>
-[Live Demo - Bar Chart](https://stilravi.github.io/Frontend-Data/02-BarChart/index.html)
+[Live Demo - Data visualisation](https://frontend-applications-rho.vercel.app/)
 
 <br/>
 
@@ -54,10 +54,10 @@ De Live Demo is te vinden op de volgende link: <br/>
 Om dit project binnen te halen kan deze Repository gecloned worden naar je eigen Device.
 
 ```shell
-$git clone https://github.com/stilravi/Frontend-Data.git
+$git clone https://github.com/stilravi/Frontend-Applications.git
 ```
 
-Vervolgens kun je een lokale server opzetten waarop het script gedraaid kan worden. In het mapje "01-Excersises" zijn alle opdrachten / oefeningen te vinden die ik gemaakt heb om SVG en D3 te snappen. In het mapje "02-BarChart" is de uiteindelijk eindopdracht van dit vak te vinden.
+Vervolgens kun je een lokale server opzetten waarop het script gedraaid kan worden. In het mapje "react-app" zijn alle bestanden en scripts te zien van de Data visualisatie.
 
 <br/>
 
