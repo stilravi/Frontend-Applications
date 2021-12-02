@@ -3,13 +3,15 @@ import { useEffect, useState } from "react";
 export const useData = () => {
   const [data, setData] = useState(null);
 
+  // useEffect with a Fetch inside
   useEffect(() => {
-    fetch("https://api.punkapi.com/v2/beers") // Vult hier de API url in + het API topic
+    fetch("https://api.punkapi.com/v2/beers")
       .then((response) => response.json())
       .then((data) => {
-        setData(data); // Voer de showResults functie uit en stuur een parameter mee
+        setData(data); // Setting the Data
       });
   }, []);
 
+  // Returning the Data
   return data;
 };

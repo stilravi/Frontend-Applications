@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import { FiHome, FiInfo, FiAtSign } from "react-icons/fi";
+import { FiBarChart2, FiInfo } from "react-icons/fi"; // React Icons
 
+// Styling Nav
 const NavStyled = styled.nav`
   background-color: #1a1c1f;
   height: 100vh;
@@ -42,6 +43,7 @@ const NavStyled = styled.nav`
   }
 `;
 
+// Creating Nav component
 const Nav = () => {
   return (
     <header>
@@ -49,7 +51,7 @@ const Nav = () => {
         <ul>
           <li>
             <NavLink activeclassname="active" to="/">
-              <FiHome />
+              <FiBarChart2 />
               Data visualisation
             </NavLink>
           </li>

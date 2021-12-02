@@ -3,6 +3,7 @@ import * as d3 from "d3";
 import { useData } from "./useData";
 import styled from "styled-components";
 
+// Styling Checkbox label & Input
 const StyledCheckbox = styled.label`
   position: absolute;
   top: 65px;
@@ -18,6 +19,7 @@ const StyledCheckbox = styled.label`
   }
 `;
 
+// Styling Bar Chart
 const StyledBarChart = styled.div`
   text {
     font-family: "Outfit", sans-serif;
@@ -42,17 +44,20 @@ const StyledBarChart = styled.div`
   }
 `;
 
+// Creating Bar Chart
 const Chart = () => {
   const d3Chart = useRef();
   const apiData = useData();
   const [shownData, setShownData] = useState();
   const [d3Tools, setD3Tools] = useState({});
 
+  // Creating useEffect for defining everything
   useEffect(() => {
     const margin = { top: 80, bottom: 10, left: 200, right: 20 };
     const width = 850 - margin.left - margin.right;
     const height = 630 - margin.top - margin.bottom;
 
+    // Creates SVG with "heigt" and "width" attribute
     const svg = d3
       .select(d3Chart.current)
       .attr("width", width + margin.left + margin.right)
@@ -78,6 +83,7 @@ const Chart = () => {
       .scaleSequential(d3.interpolateRgb("#C6D6FF", "#3A4FCF"))
       .domain([0, 25]);
 
+    // Setting D3Tools so they can be used outside the useEffect (i know the is a better way for doing this :) )
     setD3Tools({
       xscale,
       yscale,
@@ -90,10 +96,12 @@ const Chart = () => {
     });
   }, []);
 
+  // useEffect for setShownData that is the apiData
   useEffect(() => {
     setShownData(apiData);
   }, [apiData]);
 
+  // useEffect that returns nothing when shownData is empty
   useEffect(() => {
     if (!shownData) {
       return;
@@ -102,13 +110,16 @@ const Chart = () => {
     const { xscale, yscale, g_xaxis, g_yaxis, xaxis, yaxis, colorScale, svg } =
       d3Tools;
 
+    // Setting scales and color scale
     xscale.domain([0, d3.max(shownData, (d) => d.abv)]);
     yscale.domain(shownData.map((d) => d.name));
     colorScale.domain([0, d3.max(shownData, (d) => d.abv)]);
 
+    // Calling scales with transition
     g_xaxis.transition().call(xaxis);
     g_yaxis.transition().call(yaxis);
 
+    // Selecting the svg and adding the necessary attributes
     svg
       .select("g")
       .selectAll("rect")
@@ -121,14 +132,15 @@ const Chart = () => {
       .attr("fill", (d, i) => colorScale(d.abv));
   });
 
-  function handleInputChange(event) {
+  // Function for filtering beers under 8% alcohol
+  const handleInputChange = (event) => {
     console.log(event.currentTarget.checked);
     if (event.currentTarget.checked) {
       setShownData(apiData.filter((d) => d.abv < 8));
     } else {
       setShownData(apiData);
     }
-  }
+  };
 
   return (
     <StyledBarChart>

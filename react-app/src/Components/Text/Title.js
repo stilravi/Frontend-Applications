@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
+// Styling Title
 const StyledTitle = styled.h1`
   color: red;
   font-family: "Outfit", sans-serif;
@@ -12,8 +13,9 @@ const StyledTitle = styled.h1`
   left: 30px;
 `;
 
-function Title({ children }) {
+// Creating Title component
+const Title = ({ children }) => {
   return <StyledTitle>{children}</StyledTitle>;
-}
+};
 
 export default Title;
