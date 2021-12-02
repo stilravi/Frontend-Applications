@@ -67,6 +67,8 @@ Vervolgens kun je een lokale server opzetten waarop het script gedraaid kan word
 
 Tijdens dit project heb ik meerdere bronnen gebruikt die mij goed op weg geholpen hebben.
 
+- [Styled Components Tutorial](https://www.youtube.com/watch?v=-FZzPHSLauc&ab_channel=PedroTech) voor het leren over Styled Components.
+- [React Router 6 Tutorial](https://www.youtube.com/watch?v=4NpGzBEySvI&t=3s&ab_channel=LeighHalliday) voor alle informatie over Routing in React.
 - [Learn D3 Tutorial](https://observablehq.com/collection/@d3/learn-d3) voor het leren van D3.js
 - [React Documentation](https://reactjs.org/docs/getting-started.html) voor het vinden van alle documentatie van React.
 - [Punk API](https://punkapi.com/documentation/v2) is de API die ik voor de Data gebruikt heb.
