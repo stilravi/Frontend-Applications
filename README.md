@@ -73,6 +73,7 @@ Tijdens dit project heb ik meerdere bronnen gebruikt die mij goed op weg geholpe
 - [React Documentation](https://reactjs.org/docs/getting-started.html) voor het vinden van alle documentatie van React.
 - [Punk API](https://punkapi.com/documentation/v2) is de API die ik voor de Data gebruikt heb.
 - [D3.js Library](https://d3js.org/) is de Library die ik gebruikt heb voor de Datavisualisatie.
+- [React Icons](https://react-icons.github.io/react-icons/) voor het gebruik van de iconen.
 - Medestudenten uit Support Group 3 voor het delen van kennis en informatie.
 - College's van Vincent en Angelo over D3 en de bijbehorende onderwerpen voor alle kennis en informatie.
 - [Melvin](https://github.com/MelvinIdema) en [Jelle](https://github.com/jellekitz) die mij veel geholpen hebben met debuggen en het oplossen van een aantal dingen.
