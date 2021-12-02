@@ -7,7 +7,7 @@ Ravi Stil | 02-12-2021 | Frontend Data | Information Design: Tech Track
 
 <br/>
 
-![Intro Image](https://github.com/stilravi/Frontend-Data/blob/main/_wiki/00-overview.png)
+![Intro Image](https://github.com/stilravi/Frontend-Applications/blob/main/_wiki/00-overview.png)
 
 <br/>
 
