@@ -119,7 +119,7 @@ const Chart = () => {
     g_xaxis.transition().call(xaxis);
     g_yaxis.transition().call(yaxis);
 
-    // Selecting the svg and adding the necessary attributes
+    // Selecting the g inside the svg and adding the necessary attributes
     svg
       .select("g")
       .selectAll("rect")
