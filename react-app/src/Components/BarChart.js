@@ -8,17 +8,37 @@ const StyledCheckbox = styled.label`
   top: 65px;
   left: 30px;
   font-family: "Outfit", sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   color: #4e4e4e;
   margin-top: 0px;
   cursor: pointer;
+
+  input {
+    margin-right: 10px;
+  }
 `;
 
 const StyledBarChart = styled.div`
   text {
     font-family: "Outfit", sans-serif;
-    font-size: 11px;
+    font-size: 12px;
     color: #4e4e4e;
+  }
+
+  .x .tick line {
+    stroke-width: 1;
+    stroke: #d8d8d8;
+    fill: none;
+  }
+
+  .y .tick line {
+    visibility: hidden;
+  }
+
+  .axis > path {
+    stroke-width: 2;
+    stroke: #d8d8d8;
+    fill: none;
   }
 `;
 
@@ -31,7 +51,7 @@ const Chart = () => {
   useEffect(() => {
     const margin = { top: 80, bottom: 10, left: 200, right: 20 };
     const width = 850 - margin.left - margin.right;
-    const height = 600 - margin.top - margin.bottom;
+    const height = 630 - margin.top - margin.bottom;
 
     const svg = d3
       .select(d3Chart.current)

@@ -14,7 +14,7 @@ const StyledHome = styled.main`
 const Home = () => {
   return (
     <StyledHome>
-      <Title>Alchohol percentage of 25 beers</Title>
+      <Title>Alchohol percentage of Brewdog beers</Title>
       <Chart />
     </StyledHome>
   );
