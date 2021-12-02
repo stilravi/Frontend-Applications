@@ -26,7 +26,7 @@ Ravi Stil | 02-12-2021 | Frontend Data | Information Design: Tech Track
 
 ## Opdracht
 
-De volgende omschrijving van de opdracht hebben wij gekregen op de eerste dag: "Create a data visualisation (using the d3 library) based on given data where data can be explored through interaction using enter(), update(), and exit()". De bedoeling was dus dat er een data visualisatie gemaakt moest worden met de D3 Library. Hierbij moest de Data uit een API komen en moest deze data vanuit de API verwerkt worden in de visualisatie. Dit kan gedaan worden met de enter(), update(). en exit() functions maar in de nieuwste versie van D3 kan dit ook alleen met .join gedaan worden.
+De volgende omschrijving van de opdracht hebben wij gekregen op de eerste dag: "Create a client-side application in JavaScript which dynamically renders data to views using either a front-end framework or system created by you. Reflect on the merits and costs of frameworks together.". De bedoeling was dus dat er een Client Side Application gemaakt moest worden die op JavaScript draait. Deze applicatie moet data dynamisch renderen doormiddel van een bestaand Framework of een eigen gemaakt Framework. Hierbij is voorafgaand verteld dat React gebruikt wordt tijdens alle lessen.
 
 <br/>
 
