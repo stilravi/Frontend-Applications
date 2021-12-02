@@ -7,7 +7,7 @@ Ravi Stil | 02-12-2021 | Frontend Data | Information Design: Tech Track
 
 <br/>
 
-![Intro Image](https://github.com/stilravi/Frontend-Applications/blob/main/_wiki/00-overview.png)
+![Intro Image](https://github.com/stilravi/Frontend-Applications/blob/main/_wiki/00-intro.png)
 
 <br/>
 
@@ -15,6 +15,7 @@ Ravi Stil | 02-12-2021 | Frontend Data | Information Design: Tech Track
 
 - [Opdracht](#Opdracht)
 - [Data](#Data)
+  - [React](#React)
   - [D3 Library](#D3-Library])
   - [Punk API](#Punk-API])
 - [Instalatie](#Instalatie)
@@ -30,6 +31,10 @@ De volgende omschrijving van de opdracht hebben wij gekregen op de eerste dag: "
 <br/>
 
 ## Data
+
+### React
+
+Om de Datavisualisatie te maken moet er gebruik gemaakt worden van de D3 Library. Dit is een JavaScript Library die erg handig is voor het maken van veel verschillende soorten Datavisualisaties. De documentatie van deze Library is te vinden op [deze pagina](https://d3js.org/).
 
 ### D3 Library
 
